@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: pet-helper-auth-service
+  logging:
+    level:
+      org.springframework.web: INFO
+      guru.springframework.controllers: INFO
+      org.hibernate: INFO
+
+security:
+  jwt:
+    token:
+      secret-key: "secretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkey"
+
+feign:
+  user-service:
+    value: userService
+    url: http://localhost:8081/api/v1/users
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+starter:
+  logging:
+    enabled: true
+  handler:
+    enabled: true
