@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: pet-helper-image-service
+  profiles:
+    active: dev
