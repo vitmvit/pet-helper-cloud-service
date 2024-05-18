@@ -7,17 +7,6 @@ spring:
     allow-bean-definition-overriding: true
   application:
     name: pet-helper-api-gateway-service
-#  cloud:
-#    gateway:
-#      globalcors:
-#        cors-configurations:
-#          '[/**]':
-#            allowedOrigins: "http://localhost:4200"
-#            allowedMethods:
-#              - GET
-#              - POST
-#              - PUT
-#              - DELETE
 
 eureka:
   client:
