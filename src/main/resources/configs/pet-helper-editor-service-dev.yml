@@ -1,9 +1,9 @@
 server:
-  port: 8085
+  port: 8087
 
 spring:
   application:
-    name: pet-helper-service
+    name: pet-helper-editor-service
   redis:
     port: 6379
     host: localhost
@@ -11,7 +11,6 @@ spring:
       enabled: true
   datasource:
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://localhost:5432/records_test?stringtype=unspecified
     url: jdbc:postgresql://localhost:5432/records?stringtype=unspecified
     username: root
     password: root
@@ -26,27 +25,20 @@ spring:
       hibernate:
         format_sql: true
 
+feign:
+  auth-service:
+    value: authService
+    url: http://localhost:8080/api/v1/auth
+  user-service:
+    value: userService
+    url: http://localhost:8081/api/v1/users
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /api/doc/
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-feign:
-  client:
-    config:
-      readTimeout: 160000000
-  auth-service:
-    value: authService
-    url: http://localhost:8080/api/v1/auth
-  image-service:
-    value: imageService
-    url: http://localhost:8080/api/v1/
-  tag-service:
-    value: authService
-    url: http://localhost:8080/api/v1/tags
-  article-service:
-    value: userService
-    url: http://localhost:8080/api/v1/articles
-  user-service:
-    value: userService
-    url: http://localhost:8081/api/v1/users
