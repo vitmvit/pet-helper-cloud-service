@@ -8,6 +8,11 @@ chat-scheduler:
 spring:
   application:
     name: pet-helper-message-service
+  redis:
+    port: 6379
+    host: localhost
+    cluster:
+      enabled: true
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/messages?stringtype=unspecified
@@ -38,3 +43,6 @@ feign:
   user-service:
     value: userService
     url: http://localhost:8081/api/v1/users
+  image-service:
+    value: imageService
+    url: http://localhost:8080/api/v1
