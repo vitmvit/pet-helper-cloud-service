@@ -15,9 +15,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/records?stringtype=unspecified
     username: root
     password: root
-  liquibase:
-    enabled: true
-    change-log: changelog-master.xml
   jpa:
     hibernate:
       ddl-auto: update
@@ -37,9 +34,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 feign:
-  client:
-    config:
-      readTimeout: 160000000
+#  client:
+  #    config:
+  #      readTimeout: 160000000
   auth-service:
     value: authService
     url: http://localhost:8080/api/v1/auth
